@@ -2,15 +2,15 @@ import React, {useState} from 'react';
 import './App.css';
 import {Rating, RatingValueType} from "./components/Rating";
 import Accordion from "./components/Accordion";
-import {OnOff} from "./components/OnOff/OnOff";
 import UncontrolledAccordion from "./components/UncontrolledAccordion";
-import {UncontrolledRating} from "./components/UncontrolledRating";
 import {UncontrolledOnOff} from "./components/UncontrolledOnOff/UncontrolledOnOff";
+import {ControlledCheckbox, ControlledInput, ControlledSelect} from "./UncontrolledInput";
 
 function App() {
-    let [RatingValue, setRatingValue]=useState<RatingValueType>(0)
-    let [accordionCollapsed, setAccordionCollapsed]=useState<boolean>(true)
-    let [switchOn,setSwitchOn]=useState<boolean>(true)
+    const callback=(value:number)=>alert(`чувак с айдишником ${value} кликнул`)
+    let [RatingValue, setRatingValue] = useState<RatingValueType>(0)
+    let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(true)
+    let [switchOn, setSwitchOn] = useState<boolean>(true)
     return (
         <div className={'App'}>
             {/*<OnOff on={switchOn} onChange={setSwitchOn} />*/}
@@ -18,7 +18,20 @@ function App() {
             {/*<UncontrolledAccordion titleValue={"User"}/>*/}
             <UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString()}
             <Rating value={RatingValue} onClick={setRatingValue}/>
-            <Accordion titleValue={"Menu"} collapsed={accordionCollapsed} onChange={()=>{setAccordionCollapsed(!accordionCollapsed)}} />
+            <Accordion titleValue={"Users"}
+                       collapsed={accordionCollapsed}
+                       onChange={() => {
+                           setAccordionCollapsed(!accordionCollapsed)
+                       }}
+                       items={[
+                           {title: 'Dima', value: 1},
+                           {title: 'Valera', value: 2},
+                           {title: 'Emil', value: 3}]}
+                       onClick={callback}
+            />
+            <ControlledInput/>
+            <ControlledCheckbox/>
+            <ControlledSelect/>
             {/*<Accordion titleValue={"User"} collapsed={false} />*/}
             {/*<Rating value={0} />*/}
             {/*<Rating value={1} />*/}
