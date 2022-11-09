@@ -5,12 +5,14 @@ import Accordion from "./components/Accordion";
 import UncontrolledAccordion from "./components/UncontrolledAccordion";
 import {UncontrolledOnOff} from "./components/UncontrolledOnOff/UncontrolledOnOff";
 import {ControlledCheckbox, ControlledInput, ControlledSelect} from "./UncontrolledInput";
+import {Select} from "./components/Select/Select";
 
 function App() {
     const callback=(value:number)=>alert(`чувак с айдишником ${value} кликнул`)
     let [RatingValue, setRatingValue] = useState<RatingValueType>(0)
     let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(true)
     let [switchOn, setSwitchOn] = useState<boolean>(true)
+    let [value,setValue]=useState('')
     return (
         <div className={'App'}>
             {/*<OnOff on={switchOn} onChange={setSwitchOn} />*/}
@@ -31,7 +33,12 @@ function App() {
             />
             <ControlledInput/>
             <ControlledCheckbox/>
-            <ControlledSelect/>
+            {/*<ControlledSelect/>*/}
+            <Select onChange={setValue} value={value} items={[
+                {value:'1',title:'Minsk'},
+                {value:'2',title:'Moscow'},
+                {value:'3',title:'Kiev'}
+            ]}/>
             {/*<Accordion titleValue={"User"} collapsed={false} />*/}
             {/*<Rating value={0} />*/}
             {/*<Rating value={1} />*/}
