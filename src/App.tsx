@@ -6,6 +6,7 @@ import UncontrolledAccordion from "./components/UncontrolledAccordion";
 import {UncontrolledOnOff} from "./components/UncontrolledOnOff/UncontrolledOnOff";
 import {ControlledCheckbox, ControlledInput, ControlledSelect} from "./UncontrolledInput";
 import {Select} from "./components/Select/Select";
+import {Example1} from "./components/ReactMemo";
 
 function App() {
     const callback=(value:number)=>alert(`чувак с айдишником ${value} кликнул`)
@@ -39,6 +40,7 @@ function App() {
                 {value:'2',title:'Moscow'},
                 {value:'3',title:'Kiev'}
             ]}/>
+            <Example1/>
             {/*<Accordion titleValue={"User"} collapsed={false} />*/}
             {/*<Rating value={0} />*/}
             {/*<Rating value={1} />*/}
