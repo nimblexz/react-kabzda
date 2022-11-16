@@ -7,6 +7,7 @@ import {UncontrolledOnOff} from "./components/UncontrolledOnOff/UncontrolledOnOf
 import {ControlledCheckbox, ControlledInput, ControlledSelect} from "./UncontrolledInput";
 import {Select} from "./components/Select/Select";
 import {Example1} from "./components/ReactMemo";
+import {DifficultCountExample2, HelpsToReactMemo} from "./components/UseMemo";
 
 function App() {
     const callback=(value:number)=>alert(`чувак с айдишником ${value} кликнул`)
@@ -41,6 +42,8 @@ function App() {
                 {value:'3',title:'Kiev'}
             ]}/>
             <Example1/>
+            <DifficultCountExample2/>
+            <HelpsToReactMemo/>
             {/*<Accordion titleValue={"User"} collapsed={false} />*/}
             {/*<Rating value={0} />*/}
             {/*<Rating value={1} />*/}
