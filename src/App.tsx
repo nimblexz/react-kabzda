@@ -8,6 +8,8 @@ import {ControlledCheckbox, ControlledInput, ControlledSelect} from "./Uncontrol
 import {Select} from "./components/Select/Select";
 import {Example1} from "./components/ReactMemo";
 import {DifficultCountExample2, HelpsToReactMemo} from "./components/UseMemo";
+import {UseState} from "./components/UseState";
+import {Clock} from "./components/Clock/Clock";
 
 function App() {
     const callback=(value:number)=>alert(`чувак с айдишником ${value} кликнул`)
@@ -41,9 +43,10 @@ function App() {
                 {value:'2',title:'Moscow'},
                 {value:'3',title:'Kiev'}
             ]}/>
-            <Example1/>
+            {/*<Example1/>
             <DifficultCountExample2/>
-            <HelpsToReactMemo/>
+            <HelpsToReactMemo/>*/}
+<Clock/>
             {/*<Accordion titleValue={"User"} collapsed={false} />*/}
             {/*<Rating value={0} />*/}
             {/*<Rating value={1} />*/}
